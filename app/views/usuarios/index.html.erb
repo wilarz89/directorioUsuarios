@@ -1,0 +1,22 @@
+<h1>Listado de Usuarios</h1>
+
+<%= link_to 'Crear nuevo usuario', new_usuario_path %>
+
+<table>
+  <tr>
+    <th>Nombres</th>
+    <th>apellidos</th>
+    <th>Email</th>
+    <th>Telefono</th>
+  </tr>
+
+  <% @usuarios.each do |usuario| %>
+    <tr>
+      <td><%= usuario.nombres %></td>
+      <td><%= usuario.apellidos %></td>
+      <td><%= usuario.email %></td>
+      <td><%= usuario.telefono %></td>
+      <td><%= link_to 'Mostrar', usuarios_path(@usuario) %></td>
+     </tr>
+  <% end %>
+</table>

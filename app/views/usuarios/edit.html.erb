@@ -1,17 +1,16 @@
-<h1>Nuevo Usuario</h1>
+<h1>Editar Usuarios</h1>
 
-<%= form_for :usuario , url: usuarios_path do |f| %>
-<% if @usuario.errors.any? %>
-<div id="error_explanation">
-    <h2><%= pluralize(@usuario.errors.count, "error") %><br> No se pudo guardar el usuario:</h2>
+<%= form_for :usuario, url: usuario_path(@usuario), method: :patch do |f| %>
+  <% if @usuario.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@usuario.errors.count, "error") %> NO se pudo guardar el usuario:</h2>
     <ul>
-    <% @usuario.errors.full_messages.each do |msg| %>
+    <% @article.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
     </ul>
   </div>
   <% end %>
-  <p>
   <p>
     <%= f.label :Nombres %><br>
     <%= f.text_field :nombres %>
@@ -37,4 +36,4 @@
   </p>
 <% end %>
 
-<%= link_to 'Volver Atras', usuarios_path %>
+<%= link_to 'Back', usuarios_path %>
